@@ -17,7 +17,7 @@ class DiceActivity: BaseActivity() {
     }
 
     override fun initListener() {
-        dice.setOnClickListener {
+        iv_dice.setOnClickListener {
             rollDice()
         }
     }
@@ -31,7 +31,7 @@ class DiceActivity: BaseActivity() {
             5 -> R.drawable.dice5
             else -> R.drawable.dice6
         }
-        dice.setImageResource(drawableResource)
+        iv_dice.setImageResource(drawableResource)
     }
 }
 

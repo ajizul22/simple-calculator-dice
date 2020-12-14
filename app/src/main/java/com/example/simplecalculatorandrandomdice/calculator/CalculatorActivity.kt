@@ -16,7 +16,6 @@ class CalculatorActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
-
         initListener()
     }
 
@@ -39,31 +38,47 @@ class CalculatorActivity : BaseActivity() {
         btn_divide.setOnClickListener { appendOnClick(false, "/") }
         btn_minus.setOnClickListener { appendOnClick(false, "-") }
         btn_multiply.setOnClickListener { appendOnClick(false, "*") }
+        btn_modulo.setOnClickListener { appendOnClick(false, "%") }
         btn_equal.setOnClickListener {
             calculate()
-            tv_input.text = ""
         }
+
+        btn_delete.setOnClickListener {
+            erase()
+        }
+
         btn_clear.setOnClickListener {
             clear()
         }
     }
 
-
     fun appendOnClick(clear: Boolean, string: String) {
-        if (clear) {
-            tv_result.text = ""
-            tv_input.append(string)
-        } else {
-            tv_input.append(tv_result.text)
-            tv_input.append(string)
-            tv_result.text = ""
+        if (tv_result.text.isNotEmpty()) {
+            tv_input.text = ""
         }
+            if (clear) {
+                tv_result.text = ""
+                tv_input.append(string)
+            } else {
+                tv_input.append(tv_result.text)
+                tv_input.append(string)
+                tv_result.text = ""
+            }
     }
 
     fun clear() {
         tv_input.text = ""
         tv_result.text = ""
     }
+
+    fun erase() {
+        val inputText = tv_input.text
+        if(inputText.isNotEmpty()) {
+            tv_input.text = inputText.substring(0, inputText.length-1)
+        }
+        tv_result.text = ""
+    }
+
 
     fun calculate() {
         try {
