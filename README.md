@@ -26,7 +26,7 @@ This repository is the code from Roll Dice and Calculator App
 
 ## Requirements
 
-1. <a href="https://developer.android.com/studio?hl=id&gclid=Cj0KCQiAh4j-BRCsARIsAGeV12AGBB7D_rYGMBD5Lb9_cJuT3Ny_feW-cFm2Cb582-avOB92-fHmjPEaAjv3EALw_wcB&gclsrc=aw.ds">Android Studio</a>
+1. Android Studio
 
 ---
 
